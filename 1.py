@@ -14,10 +14,13 @@ model = keras.Sequential( [ layers.Dense( 512, activation="relu" ), layers.Dense
 
 
 #-- Set optimizer 
-model.compile( optimizer="rmsprop", loss="sparse_categorical_crossentropy", metrics=["accuracy"])
+model.compile( optimizer="rmsprop", loss="sparse_categorical_crossentropy", metrics=["accuracy"] )
+
+#-- Tensorboard 
+tensorboard = keras.callbacks.TensorBoard( log_dir="./1_tensorboard" )
 
 #-- Train
-model.fit( tImg, tLabels, epochs=5, batch_size=128 )
+model.fit( tImg, tLabels, epochs=25, batch_size=128, validation_data=(testImg[0:1000], testLabels[0:1000]), callbacks=[ tensorboard ] )
 
 model.summary()
 config = model.get_config()

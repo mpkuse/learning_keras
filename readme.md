@@ -8,5 +8,8 @@ Following the Deep Learning with Python book by Francois Chollet.
 - IMDB Positive/Negative Sentiment Classification (3_imdb_binclass.py)
 
 ## Computer Vision Nets
-RCNN - object detection
-PointCloud Nets 
+- RCNN - object detection
+- YOLO
+- Flownet
+- PointNet
+- Object Tracking ISOT IMOT 
